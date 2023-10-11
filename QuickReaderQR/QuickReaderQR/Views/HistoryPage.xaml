@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="QuickReaderQR.HistoryPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="HistoryListView" ItemSelected="HistoryListView_ItemSelected">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Detail="{Binding ScanDateTime, StringFormat='Scanned on {0:g}'}" Text="{Binding Text}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Clicked="ClearHistoryButton_Clicked" Text="Clear History" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

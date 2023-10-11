@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="QuickReaderQR.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms">
+
+
+    <StackLayout Padding="10">
+        <Frame
+            Margin="0,0,0,10"
+            Padding="24"
+            BackgroundColor="#2196F3"
+            CornerRadius="10">
+            <Button
+                BackgroundColor="Transparent"
+                Clicked="ShowHistoryButton_Clicked"
+                FontSize="36"
+                Text="Show History"
+                TextColor="White" />
+        </Frame>
+
+
+        <zxing:ZXingScannerView IsScanning="True" OnScanResult="ZXingScannerView_OnScanResult" />
+
+        <Frame
+            x:Name="ResultFrame"
+            Padding="10"
+            BackgroundColor="#E0E0E0"
+            CornerRadius="10"
+            IsVisible="False">
+            <Label
+                x:Name="ResultLabel"
+                FontSize="24"
+                HorizontalTextAlignment="Center"
+                TextColor="Black" />
+        </Frame>
+    </StackLayout>
+
+</ContentPage>
