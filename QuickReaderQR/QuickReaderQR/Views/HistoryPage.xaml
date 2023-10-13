@@ -2,19 +2,43 @@
 <ContentPage
     x:Class="QuickReaderQR.HistoryPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="History">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Padding="10">
             <ListView x:Name="HistoryListView" ItemSelected="HistoryListView_ItemSelected">
-
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Detail="{Binding ScanDateTime, StringFormat='Scanned on {0:g}'}" Text="{Binding Text}" />
+                        <ViewCell>
+                            <Grid Padding="10" BackgroundColor="#E0E0E0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontSize="18"
+                                    Text="{Binding Text}"
+                                    TextColor="Black" />
+                                <Label
+                                    Grid.Column="1"
+                                    FontSize="14"
+                                    HorizontalOptions="End"
+                                    Text="{Binding ScanDateTime, StringFormat='Scanned on {0:g}'}"
+                                    TextColor="Gray" />
+                            </Grid>
+                        </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Button Clicked="ClearHistoryButton_Clicked" Text="Clear History" />
 
+            <Button
+                Margin="10,0,10,0"
+                BackgroundColor="#F30000"
+                Clicked="ClearHistoryButton_Clicked"
+                Text="Clear History"
+                TextColor="White" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
