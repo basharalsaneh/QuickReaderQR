@@ -7,7 +7,7 @@
     Title="QuickReaderQR">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem
+        <ToolbarItem 
             Clicked="ShowHistoryButton_Clicked"
             IconImageSource="history_icon.png"
             Priority="0" />
@@ -34,7 +34,6 @@
                 HorizontalTextAlignment="Center"
                 TextColor="Black" />
         </Frame>
-
     </StackLayout>
 
 

@@ -60,7 +60,7 @@ namespace QuickReaderQR.Views
                     barcodeFormat = ZXing.BarcodeFormat.QR_CODE;
                     string wifiName = wifiNameEntry.Text;
                     string wifiPassword = wifiPasswordEntry.Text;
-                    barcodeValue = $"WIFI:T:WPA;S:{wifiName};P:{wifiPassword};;";
+                    barcodeValue = $"WIFI: {wifiName}\nPassword: {wifiPassword}";
                     break;
                 case "VCard":
                     barcodeFormat = ZXing.BarcodeFormat.QR_CODE;
@@ -68,7 +68,7 @@ namespace QuickReaderQR.Views
                     string vcardPhone = vcardPhoneEntry.Text;
                     string vcardEmail = vcardEmailEntry.Text;
                     string vcardTitle = vcardTitleEntry.Text;
-                    barcodeValue = $"BEGIN:VCARD\nVERSION:3.0\nFN:{vcardName}\nTEL:{vcardPhone}\nEMAIL:{vcardEmail}\nTITLE:{vcardTitle}\nEND:VCARD";
+                    barcodeValue = $"BEGIN:VCARD\nVERSION:3.0\nFN: {vcardName}\nTEL: {vcardPhone}\nEMAIL: {vcardEmail}\nTITLE: {vcardTitle}\nEND:VCARD";
                     break;
             }
 
