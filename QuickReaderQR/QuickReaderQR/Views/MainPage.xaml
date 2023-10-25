@@ -34,7 +34,6 @@
                 HorizontalTextAlignment="Center"
                 TextColor="Black" />
         </Frame>
+
     </StackLayout>
-
-
 </ContentPage>
