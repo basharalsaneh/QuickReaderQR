@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuickReaderQR.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,7 +18,17 @@ namespace QuickReaderQR
             InitializeComponent();
             BindingContext = historyItem;
         }
+        private async void ShowHistoryButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new HistoryPage());
+        }
 
+
+        private async void GenerateQrButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new GenerateQrPage());
+
+        }
 
     }
 }

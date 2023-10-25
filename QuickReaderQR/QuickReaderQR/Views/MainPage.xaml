@@ -6,21 +6,19 @@
     xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
     Title="QuickReaderQR">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Clicked="ShowHistoryButton_Clicked"
+            IconImageSource="history_icon.png"
+            Priority="0" />
+
+        <ToolbarItem
+            Clicked="GenerateQrButton_Clicked"
+            IconImageSource="qr_code_icon.png"
+            Priority="1" />
+    </ContentPage.ToolbarItems>
 
     <StackLayout Padding="10">
-        <Frame
-            Margin="0,0,0,10"
-            Padding="24"
-            BackgroundColor="#2196F3"
-            CornerRadius="10">
-            <Button
-                BackgroundColor="Transparent"
-                Clicked="ShowHistoryButton_Clicked"
-                FontSize="36"
-                Text="Show History"
-                TextColor="White" />
-        </Frame>
-
 
         <zxing:ZXingScannerView IsScanning="True" OnScanResult="ZXingScannerView_OnScanResult" />
 
@@ -36,6 +34,8 @@
                 HorizontalTextAlignment="Center"
                 TextColor="Black" />
         </Frame>
+
     </StackLayout>
+
 
 </ContentPage>

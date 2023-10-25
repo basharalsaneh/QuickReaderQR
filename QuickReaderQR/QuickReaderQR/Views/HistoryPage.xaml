@@ -4,6 +4,9 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="History">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Clicked="GenerateQrButton_Clicked" IconImageSource="qr_code_icon.png" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout Padding="10">
             <ListView x:Name="HistoryListView" ItemSelected="HistoryListView_ItemSelected">

@@ -4,6 +4,17 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="Details">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Clicked="ShowHistoryButton_Clicked"
+            IconImageSource="history_icon.png"
+            Priority="0" />
+
+        <ToolbarItem
+            Clicked="GenerateQrButton_Clicked"
+            IconImageSource="qr_code_icon.png"
+            Priority="1" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout Padding="20" VerticalOptions="Center">
 

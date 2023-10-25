@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="QuickReaderQR.Views.GenerateQrPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+    xmlns:zxingcommon="clr-namespace:ZXing.Common;assembly=zxing"
+    Title="Generate QR Code">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Clicked="ShowHistoryButton_Clicked" IconImageSource="history_icon.png" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+
+
+        <StackLayout Padding="10">
+            <Picker
+                x:Name="qrTypePicker"
+                Title="Select QR Code Type"
+                SelectedIndexChanged="OnPickerSelectedIndexChanged">
+                <Picker.Items>
+                    <x:String>URL</x:String>
+                    <x:String>WiFi Network</x:String>
+                    <x:String>VCard</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <!--  Fält för WiFi-nätverk  -->
+            <Entry
+                x:Name="wifiNameEntry"
+                IsVisible="False"
+                Placeholder="Enter WiFi Name" />
+            <Entry
+                x:Name="wifiPasswordEntry"
+                IsVisible="False"
+                Placeholder="Enter WiFi Password" />
+
+            <!--  Fält för VCard  -->
+            <Entry
+                x:Name="vcardNameEntry"
+                IsVisible="False"
+                Placeholder="Enter Name" />
+            <Entry
+                x:Name="vcardPhoneEntry"
+                IsVisible="False"
+                Placeholder="Enter Phone Number" />
+            <Entry
+                x:Name="vcardEmailEntry"
+                IsVisible="False"
+                Placeholder="Enter Email" />
+            <Entry
+                x:Name="vcardTitleEntry"
+                IsVisible="False"
+                Placeholder="Enter Title" />
+
+            <!--  Fält för URL  -->
+            <Entry
+                x:Name="urlEntry"
+                IsVisible="False"
+                Placeholder="Enter URL" />
+
+
+            <Button Clicked="OnGenerateClicked" Text="Generate QR Code" />
+
+            <zxing:ZXingBarcodeImageView
+                x:Name="zxingBarcodeImageView"
+                HeightRequest="300"
+                WidthRequest="300">
+                <zxing:ZXingBarcodeImageView.BarcodeOptions>
+                    <zxingcommon:EncodingOptions Width="300" Height="300" />
+                </zxing:ZXingBarcodeImageView.BarcodeOptions>
+            </zxing:ZXingBarcodeImageView>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

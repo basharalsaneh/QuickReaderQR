@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
+﻿using QuickReaderQR.Views;
+using System;
 using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Essentials;
 using Xamarin.Forms;
+
 
 namespace QuickReaderQR
 {
     public partial class MainPage : ContentPage
     {
         private ScanHistoryDataService _dataService;
+
 
         public MainPage()
         {
@@ -46,6 +44,12 @@ namespace QuickReaderQR
             await Navigation.PushAsync(new HistoryPage());
         }
 
+
+        private async void GenerateQrButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new GenerateQrPage());
+
+        }
 
 
 
